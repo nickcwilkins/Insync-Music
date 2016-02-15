@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<Pane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.componentControllers.MusicBarController">
+   <children>
+      <Label fx:id="titleLabel" layoutX="337.0" layoutY="6.0" styleClass="title" text="Welcome to Sync Music" textAlignment="CENTER" />
+      <Label fx:id="currentTimeLabel" layoutX="157.0" layoutY="25.0" onDragDone="#OnScrubbingComplete" text="0:00" />
+      <Slider fx:id="scrubber" layoutX="198.0" layoutY="26.0" onMouseReleased="#OnScrubbingComplete" onScrollFinished="#OnMouseWheelComplete" prefHeight="15.0" prefWidth="438.0" />
+      <Label fx:id="remainingTimeLabel" layoutX="650.0" layoutY="25.0" onDragDone="#OnScrubbingComplete" text="0:00" />
+   </children>
+</Pane>
