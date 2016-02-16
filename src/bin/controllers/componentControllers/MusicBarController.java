@@ -5,11 +5,10 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-
 import java.io.File;
 
 public class MusicBarController
@@ -26,6 +25,8 @@ public class MusicBarController
   @FXML private Label remainingTimeLabel;
   @FXML private Slider scrubber;
   @FXML private ImageView playBtn;
+  private Image playImage = new Image("img/play.png");
+  private Image pauseImage = new Image("img/pause.png");
 
   ChangeListener<Number> sliderScrubListener;
   ChangeListener<Duration> sliderUpdate;
@@ -92,7 +93,16 @@ public class MusicBarController
 
   @FXML public void OnPlayClicked()
   {
-
+    if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING)
+    {
+      mediaPlayer.pause();
+      playBtn.setImage(pauseImage);
+    }
+    else if(mediaPlayer.getStatus() == MediaPlayer.Status.PAUSED)
+    {
+      mediaPlayer.play();
+      playBtn.setImage(playImage);
+    }
   }
 
   @FXML public void OnNextClicked()

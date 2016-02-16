@@ -36,7 +36,7 @@ public class ContentPaneController
 
   private void initializeTreeView()
   {
-    //Create a TreeItem to serve as the root. is hidden in application
+    //Create a TreeItem to serve as the root. root is hidden in application
     TreeItem<String> rootNode = new TreeItem<>("Root");
     TreeItem<String> libraryTreeItem = new TreeItem<>("Music Library");
     TreeItem<String> playListsTreeItem = new TreeItem<>("Playlists");

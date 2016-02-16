@@ -29,6 +29,7 @@ public class SyncApplication extends Application
     controller.setStage(stage);
     stage.setTitle("InSync Music");
     stage.setScene(scene);
+    setUserAgentStylesheet(STYLESHEET_CASPIAN);
     scene.getStylesheets().addAll(styleSheets);
     stage.setResizable(false);
     stage.show();
