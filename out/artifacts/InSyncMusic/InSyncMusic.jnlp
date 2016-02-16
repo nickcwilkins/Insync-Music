@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="InSyncMusic.jar" size="19694" download="eager" />
+    <jar href="InSyncMusic.jar" size="19865" download="eager" />
   </resources>
   <jfx:javafx-desc  width="600" height="400" main-class="SyncApplication"  name="InSyncMusic" />
   <update check="background"/>

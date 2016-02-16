@@ -25,8 +25,8 @@ public class MusicBarController
   @FXML private Label remainingTimeLabel;
   @FXML private Slider scrubber;
   @FXML private ImageView playBtn;
-  private Image playImage = new Image("img/play.png");
-  private Image pauseImage = new Image("img/pause.png");
+  private Image playImage = new Image("bin/img/play.png");
+  private Image pauseImage = new Image("bin/img/pause.png");
 
   ChangeListener<Number> sliderScrubListener;
   ChangeListener<Duration> sliderUpdate;
@@ -37,16 +37,22 @@ public class MusicBarController
     this.main = mainController;
     this.sliderScrubListener = (observable, oldValue, newValue) -> mediaPlayer.seek(mediaPlayer.getTotalDuration().multiply(scrubber.getValue() / 100.0));
     this.sliderUpdate = (observable, oldValue, newValue) -> scrubber.setValue((mediaPlayer.getCurrentTime().toMillis() / mediaPlayer.getTotalDuration().toMillis()) * 100.0);
+
     this.textUpdate = ((observable) -> {
 
       String newCurrentTime = "";
-      //String newRemainingTime = "";
+      String newRemainingTime = "-";
 
       newCurrentTime = newCurrentTime.concat(Integer.toString((int) mediaPlayer.getCurrentTime().toSeconds() / 60) + ":");
       if((int) mediaPlayer.getCurrentTime().toSeconds() % 60 < 10) newCurrentTime = newCurrentTime.concat(Integer.toString(0));
       newCurrentTime = newCurrentTime.concat(Integer.toString((int) mediaPlayer.getCurrentTime().toSeconds() % 60));
+
+      newRemainingTime = newRemainingTime.concat(Integer.toString((int) Math.abs((mediaPlayer.getCurrentTime().toSeconds() - mediaPlayer.getTotalDuration().toSeconds())) / 60) + ":");
+      if((int) Math.abs((mediaPlayer.getCurrentTime().toSeconds() - mediaPlayer.getTotalDuration().toSeconds()) % 60) < 10) newRemainingTime = newRemainingTime.concat(Integer.toString(0));
+      newRemainingTime = newRemainingTime.concat(Integer.toString((int) Math.abs((mediaPlayer.getCurrentTime().toSeconds() - mediaPlayer.getTotalDuration().toSeconds())) % 60));
+
       currentTimeLabel.setText(newCurrentTime);
-      //remainingTimeLabel.setText(newRemainingTime);
+      remainingTimeLabel.setText(newRemainingTime);
     });
   }
 
@@ -88,7 +94,7 @@ public class MusicBarController
 
   @FXML public void OnBackClicked()
   {
-
+    updateMusicBar();
   }
 
   @FXML public void OnPlayClicked()

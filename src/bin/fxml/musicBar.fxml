@@ -14,27 +14,27 @@
       <Label fx:id="remainingTimeLabel" layoutX="610.0" layoutY="22.0" text="0:00" />
       <ImageView fx:id="nextBtn" fitHeight="25.0" fitWidth="25.0" layoutX="105.0" layoutY="16.0" onMouseClicked="#OnNextClicked" styleClass="musicControl">
          <image>
-            <Image url="@../../img/next.png" />
+            <Image url="@../img/next.png" />
          </image>
       </ImageView>
       <ImageView fx:id="backBtn" fitHeight="25.0" fitWidth="25.0" layoutX="30.0" layoutY="16.0" onMouseClicked="#OnBackClicked" styleClass="musicControl">
          <image>
-            <Image url="@../../img/back.png" />
+            <Image url="@../img/back.png" />
          </image>
       </ImageView>
       <ImageView fx:id="playBtn" fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="13.0" onMouseClicked="#OnPlayClicked" styleClass="musicControl">
          <image>
-            <Image url="@../../img/play.png" />
+            <Image url="@../img/play.png" />
          </image>
       </ImageView>
       <ImageView fx:id="repeatBtn" fitHeight="22.0" fitWidth="25.0" layoutX="667.0" layoutY="17.0" onMouseClicked="#OnRepeatClicked" styleClass="musicControl">
          <image>
-            <Image url="@../../img/repeat.png" />
+            <Image url="@../img/repeat.png" />
          </image>
       </ImageView>
       <ImageView fx:id="shuffleBtn" fitHeight="22.0" fitWidth="25.0" layoutX="712.0" layoutY="17.0" onMouseClicked="#OnShuffleClicked" styleClass="musicControl">
          <image>
-            <Image url="@../../img/shuffle.png" />
+            <Image url="@../img/shuffle.png" />
          </image>
       </ImageView>
    </children>

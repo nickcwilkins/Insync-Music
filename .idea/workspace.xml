@@ -7,18 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ae89547-1284-41d5-8891-eaf849bd28b8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/repeat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/img/shuffle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/repeat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/shuffle.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/InSyncMusic/InSyncMusic.jar" afterPath="$PROJECT_DIR$/out/artifacts/InSyncMusic/InSyncMusic.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/SyncApplication.class" afterPath="$PROJECT_DIR$/out/production/InSyncMusic/SyncApplication.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/bin/controllers/componentControllers/MusicBarController.class" afterPath="$PROJECT_DIR$/out/production/InSyncMusic/bin/controllers/componentControllers/MusicBarController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/InSyncMusic/InSyncMusic.jnlp" afterPath="$PROJECT_DIR$/out/artifacts/InSyncMusic/InSyncMusic.jnlp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/bin/fxml/musicBar.fxml" afterPath="$PROJECT_DIR$/out/production/InSyncMusic/bin/fxml/musicBar.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InSyncMusic/bin/fxml/root.fxml" afterPath="$PROJECT_DIR$/out/production/InSyncMusic/bin/fxml/root.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SyncApplication.java" afterPath="$PROJECT_DIR$/src/SyncApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bin/controllers/componentControllers/ContentPaneController.java" afterPath="$PROJECT_DIR$/src/bin/controllers/componentControllers/ContentPaneController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bin/controllers/componentControllers/MusicBarController.java" afterPath="$PROJECT_DIR$/src/bin/controllers/componentControllers/MusicBarController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bin/fxml/musicBar.fxml" afterPath="$PROJECT_DIR$/src/bin/fxml/musicBar.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bin/fxml/root.fxml" afterPath="$PROJECT_DIR$/src/bin/fxml/root.fxml" />
     </list>
     <ignored path="InSyncMusic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SyncApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SyncApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SyncApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.33637747">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -54,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/bin/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -72,15 +79,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MusicBarController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MusicBarController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bin/controllers/componentControllers/MusicBarController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04109589">
-              <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="3" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3720#3721#0" expanded="true" />
-                <element signature="e#3744#3745#0" expanded="true" />
+                <element signature="e#3912#3913#0" expanded="true" />
+                <element signature="e#3938#3939#0" expanded="true" />
+                <element signature="e#4300#4301#0" expanded="true" />
+                <element signature="e#4324#4325#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/img/play.svg" />
         <option value="$PROJECT_DIR$/src/bin/css/musicBar.css" />
         <option value="$PROJECT_DIR$/src/bin/fxml/musicBar.fxml" />
-        <option value="$PROJECT_DIR$/src/SyncApplication.java" />
         <option value="$PROJECT_DIR$/src/bin/controllers/componentControllers/ContentPaneController.java" />
+        <option value="$PROJECT_DIR$/src/SyncApplication.java" />
         <option value="$PROJECT_DIR$/src/bin/controllers/componentControllers/MusicBarController.java" />
       </list>
     </option>
@@ -586,7 +595,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -598,12 +607,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24207188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27589852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27589852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1041,22 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SyncApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bin/controllers/componentControllers/ContentPaneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1067,15 +1060,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bin/controllers/componentControllers/MusicBarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04109589">
-          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="3" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3720#3721#0" expanded="true" />
-            <element signature="e#3744#3745#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3938#3939#0" expanded="true" />
+            <element signature="e#4300#4301#0" expanded="true" />
+            <element signature="e#4324#4325#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SyncApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33637747">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
