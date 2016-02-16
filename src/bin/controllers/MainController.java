@@ -19,8 +19,8 @@ public class MainController
   public List<File> libraryList;
 
   //Component controllers
-  @FXML private ContentPaneController contentPaneController;
-  @FXML private MusicBarController musicBarController;
+  @FXML public ContentPaneController contentPaneController;
+  @FXML public MusicBarController musicBarController;
 
   @FXML private MenuItem selectLibraryBtn;
   @FXML private MenuItem syncBtn;

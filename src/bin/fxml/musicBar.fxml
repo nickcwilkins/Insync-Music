@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -7,9 +8,34 @@
 
 <Pane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.componentControllers.MusicBarController">
    <children>
-      <Label fx:id="titleLabel" layoutX="337.0" layoutY="6.0" styleClass="title" text="Welcome to Sync Music" textAlignment="CENTER" />
-      <Label fx:id="currentTimeLabel" layoutX="157.0" layoutY="25.0" onDragDone="#OnScrubbingComplete" text="0:00" />
-      <Slider fx:id="scrubber" layoutX="198.0" layoutY="26.0" onMouseReleased="#OnScrubbingComplete" onScrollFinished="#OnMouseWheelComplete" prefHeight="15.0" prefWidth="438.0" />
-      <Label fx:id="remainingTimeLabel" layoutX="650.0" layoutY="25.0" onDragDone="#OnScrubbingComplete" text="0:00" />
+      <Label fx:id="titleLabel" alignment="CENTER" layoutY="4.0" prefHeight="17.0" prefWidth="800.0" styleClass="title" text="Welcome to Insync Music" textAlignment="CENTER" />
+      <Label fx:id="currentTimeLabel" layoutX="167.0" layoutY="18.0" text="0:00" />
+      <Slider fx:id="scrubber" layoutX="200.0" layoutY="20.0" onMousePressed="#OnSliderMouseDown" onMouseReleased="#OnSliderMouseUp" prefHeight="15.0" prefWidth="400.0" />
+      <Label fx:id="remainingTimeLabel" layoutX="610.0" layoutY="18.0" text="0:00" />
+      <ImageView fx:id="nextBtn" fitHeight="25.0" fitWidth="25.0" layoutX="105.0" layoutY="13.0" onMouseClicked="#OnNextClicked" styleClass="musicControl">
+         <image>
+            <Image url="@../../img/next.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backBtn" fitHeight="25.0" fitWidth="25.0" layoutX="30.0" layoutY="13.0" onMouseClicked="#OnBackClicked" styleClass="musicControl">
+         <image>
+            <Image url="@../../img/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playBtn" fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="10.0" onMouseClicked="#OnPlayClicked" styleClass="musicControl">
+         <image>
+            <Image url="@../../img/play.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="repeatBtn" layoutX="667.0" layoutY="10.0" onMouseClicked="#OnRepeatClicked" styleClass="musicControl">
+         <image>
+            <Image url="@../../img/repeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="shuffleBtn" layoutX="712.0" layoutY="10.0" onMouseClicked="#OnShuffleClicked" styleClass="musicControl">
+         <image>
+            <Image url="@../../img/shuffle.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

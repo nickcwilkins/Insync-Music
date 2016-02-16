@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="InSyncMusic">
+    <output-path>$PROJECT_DIR$/out/artifacts/InSyncMusic</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="SyncApplication" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="paramFile" value="" />
+        <option name="title" value="Insync Music" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="InSyncMusic.jar">
+        <element id="module-output" name="InSyncMusic" />
+      </element>
+    </root>
+  </artifact>
+</component>

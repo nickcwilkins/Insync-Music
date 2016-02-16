@@ -15,12 +15,11 @@ public class ContentPaneController
   private MainController main;
 
   @FXML private TreeView<String> directoryList;
-  @FXML private ListView<File> listView;
-  public File selectedTreeItem;
+  @FXML public ListView<File> listView;
 
 
-  private ObservableList<File> libraryList = FXCollections.observableArrayList();
-  private ObservableList<String> playlistListItems = FXCollections.observableArrayList();
+  public ObservableList<File> libraryList = FXCollections.observableArrayList();
+  //private ObservableList<String> playlistListItems = FXCollections.observableArrayList();
 
   public void Init(MainController mainController)
   {
@@ -45,12 +44,7 @@ public class ContentPaneController
 
     directoryList.setRoot(rootNode);
     directoryList.setShowRoot(false);
-    directoryList.setOnMouseClicked(new EventHandler<MouseEvent>() {
-      @Override
-      public void handle(MouseEvent event) {
-        System.out.println(directoryList.getSelectionModel().getSelectedItem());
-      }
-    });
+    directoryList.setOnMouseClicked(event -> System.out.println(directoryList.getSelectionModel().getSelectedItem()));
   }
 
   //For creating a new item in the treeview from a string
@@ -68,6 +62,14 @@ public class ContentPaneController
       if(name.toLowerCase().endsWith(".mp3")) return true;
       else if(name.toLowerCase().endsWith(".mp4")) return true;
       else if(name.toLowerCase().endsWith(".wav")) return true;
+      else if(name.toLowerCase().endsWith(".pcm")) return true;
+      else if(name.toLowerCase().endsWith(".aac")) return true;
+      else if(name.toLowerCase().endsWith(".vp6")) return true;
+      else if(name.toLowerCase().endsWith(".flv")) return true;
+      else if(name.toLowerCase().endsWith(".fxm")) return true;
+      else if(name.toLowerCase().endsWith(".aiff")) return true;
+      else if(name.toLowerCase().endsWith(".hls")) return true;
+      else if(name.toLowerCase().endsWith(".m4a")) return true;
       else return false;
     }));
 

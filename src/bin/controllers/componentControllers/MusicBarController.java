@@ -1,13 +1,15 @@
 package bin.controllers.componentControllers;
 
 import bin.controllers.MainController;
-import javafx.event.ActionEvent;
+import javafx.beans.InvalidationListener;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
-import javax.swing.*;
 import java.io.File;
 
 public class MusicBarController
@@ -17,34 +19,34 @@ public class MusicBarController
   public Media media;
 
   private boolean repeat = false;
-  private boolean shuffle = true;
+  private boolean shuffle = false;
 
   @FXML private Label titleLabel;
   @FXML private Label currentTimeLabel;
   @FXML private Label remainingTimeLabel;
   @FXML private Slider scrubber;
-  @FXML private Button playBtn;
-  @FXML private Button pauseBtn;
-  @FXML private Button skipBtn;
+  @FXML private ImageView playBtn;
+
+  ChangeListener<Number> sliderScrubListener;
+  ChangeListener<Duration> sliderUpdate;
+  InvalidationListener textUpdate;
 
   public void Init(MainController mainController)
   {
     this.main = mainController;
-  }
+    this.sliderScrubListener = (observable, oldValue, newValue) -> mediaPlayer.seek(mediaPlayer.getTotalDuration().multiply(scrubber.getValue() / 100.0));
+    this.sliderUpdate = (observable, oldValue, newValue) -> scrubber.setValue((mediaPlayer.getCurrentTime().toMillis() / mediaPlayer.getTotalDuration().toMillis()) * 100.0);
+    this.textUpdate = ((observable) -> {
 
-  @FXML public void OnScrubbingComplete()
-  {
-    System.out.println("Scrubbing Complete");
-  }
+      String newCurrentTime = "";
+      //String newRemainingTime = "";
 
-  @FXML public void OnMouseWheelComplete(ActionEvent event)
-  {
-    System.out.println("Mouse Wheel Scrub Complete");
-  }
-
-  @FXML public void OnPlayBtnClicked(ActionEvent event)
-  {
-    System.out.println("Play Button Clicked");
+      newCurrentTime = newCurrentTime.concat(Integer.toString((int) mediaPlayer.getCurrentTime().toSeconds() / 60) + ":");
+      if((int) mediaPlayer.getCurrentTime().toSeconds() % 60 < 10) newCurrentTime = newCurrentTime.concat(Integer.toString(0));
+      newCurrentTime = newCurrentTime.concat(Integer.toString((int) mediaPlayer.getCurrentTime().toSeconds() % 60));
+      currentTimeLabel.setText(newCurrentTime);
+      //remainingTimeLabel.setText(newRemainingTime);
+    });
   }
 
   public void updateMusicBar()
@@ -54,9 +56,12 @@ public class MusicBarController
     titleLabel.setText(song.getName().substring(0, song.getName().lastIndexOf(".")));
     media = new Media(song.toURI().toString());
     mediaPlayer = new MediaPlayer(media);
+    main.contentPaneController.listView.getSelectionModel().select(main.contentPaneController.libraryList.indexOf(song));
     mediaPlayer.play();
-    System.out.println("Music Bar update called. New Song is " + song.getName());
+    mediaPlayer.currentTimeProperty().addListener(sliderUpdate);
+    mediaPlayer.currentTimeProperty().addListener(textUpdate);
     mediaPlayer.setOnEndOfMedia(() -> playNextSong());
+    System.out.println("Music Bar update called. New Song is " + song.getName());
   }
 
   public void playNextSong()
@@ -80,14 +85,43 @@ public class MusicBarController
     updateMusicBar();
   }
 
-  public void skip()
+  @FXML public void OnBackClicked()
   {
 
   }
 
-  public void back()
+  @FXML public void OnPlayClicked()
   {
 
   }
+
+  @FXML public void OnNextClicked()
+  {
+    playNextSong();
+  }
+
+  @FXML public void OnRepeatClicked()
+  {
+    if(!repeat) repeat = true;
+    else repeat = false;
+  }
+
+  @FXML public void OnShuffleClicked()
+  {
+    if(!shuffle) shuffle = true;
+    else shuffle = false;
+  }
+
+  @FXML public void OnSliderMouseDown()
+  {
+    mediaPlayer.currentTimeProperty().removeListener(sliderUpdate);
+    scrubber.valueProperty().addListener(sliderScrubListener);
+  }
+  @FXML public void OnSliderMouseUp()
+  {
+    scrubber.valueProperty().removeListener(sliderScrubListener);
+    mediaPlayer.currentTimeProperty().addListener(sliderUpdate);
+  }
+
 
 }
