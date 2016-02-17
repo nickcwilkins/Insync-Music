@@ -102,12 +102,12 @@ public class MusicBarController
     if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING)
     {
       mediaPlayer.pause();
-      playBtn.setImage(pauseImage);
+      playBtn.setImage(playImage);
     }
     else if(mediaPlayer.getStatus() == MediaPlayer.Status.PAUSED)
     {
       mediaPlayer.play();
-      playBtn.setImage(playImage);
+      playBtn.setImage(pauseImage);
     }
   }
 

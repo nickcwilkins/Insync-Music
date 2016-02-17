@@ -9,9 +9,9 @@
 <Pane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.componentControllers.MusicBarController">
    <children>
       <Label fx:id="titleLabel" alignment="CENTER" layoutY="4.0" prefHeight="17.0" prefWidth="800.0" styleClass="title" text="Welcome to Insync Music" textAlignment="CENTER" />
-      <Label fx:id="currentTimeLabel" layoutX="167.0" layoutY="22.0" text="0:00" />
-      <Slider fx:id="scrubber" layoutX="200.0" layoutY="23.0" onMousePressed="#OnSliderMouseDown" onMouseReleased="#OnSliderMouseUp" prefHeight="15.0" prefWidth="400.0" />
-      <Label fx:id="remainingTimeLabel" layoutX="610.0" layoutY="22.0" text="0:00" />
+      <Label fx:id="currentTimeLabel" layoutX="167.0" layoutY="25.0" text="0:00" />
+      <Slider fx:id="scrubber" layoutX="200.0" layoutY="26.0" onMousePressed="#OnSliderMouseDown" onMouseReleased="#OnSliderMouseUp" prefHeight="15.0" prefWidth="400.0" />
+      <Label fx:id="remainingTimeLabel" layoutX="610.0" layoutY="25.0" text="0:00" />
       <ImageView fx:id="nextBtn" fitHeight="25.0" fitWidth="25.0" layoutX="105.0" layoutY="16.0" onMouseClicked="#OnNextClicked" styleClass="musicControl">
          <image>
             <Image url="@../img/next.png" />
@@ -24,15 +24,15 @@
       </ImageView>
       <ImageView fx:id="playBtn" fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="13.0" onMouseClicked="#OnPlayClicked" styleClass="musicControl">
          <image>
-            <Image url="@../img/play.png" />
+            <Image url="@../img/pause.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="repeatBtn" fitHeight="22.0" fitWidth="25.0" layoutX="667.0" layoutY="17.0" onMouseClicked="#OnRepeatClicked" styleClass="musicControl">
+      <ImageView fx:id="repeatBtn" fitHeight="22.0" fitWidth="27.0" layoutX="662.0" layoutY="22.0" onMouseClicked="#OnRepeatClicked" styleClass="musicControl">
          <image>
             <Image url="@../img/repeat.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="shuffleBtn" fitHeight="22.0" fitWidth="25.0" layoutX="712.0" layoutY="17.0" onMouseClicked="#OnShuffleClicked" styleClass="musicControl">
+      <ImageView fx:id="shuffleBtn" fitHeight="22.0" fitWidth="27.0" layoutX="709.0" layoutY="22.0" onMouseClicked="#OnShuffleClicked" styleClass="musicControl">
          <image>
             <Image url="@../img/shuffle.png" />
          </image>
