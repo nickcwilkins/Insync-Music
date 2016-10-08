@@ -6,7 +6,7 @@
 
 <SplitPane dividerPositions="0.2" prefHeight="405.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.componentControllers.ContentPaneController">
    <items>
-      <TreeView fx:id="directoryList" />
+      <TreeView fx:id="tabListing" />
       <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
    </items>
 </SplitPane>

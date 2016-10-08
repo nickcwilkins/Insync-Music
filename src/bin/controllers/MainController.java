@@ -1,22 +1,23 @@
 //The main controller allows component controllers to communicate by calling methods defined in the main controller
 package bin.controllers;
 
+import bin.controllers.componentControllers.FileTypeFilter;
 import bin.controllers.componentControllers.MusicBarController;
 import bin.controllers.componentControllers.ContentPaneController;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.*;
 import java.io.*;
 import java.util.*;
-import com.google.gson.*;
 
 public class MainController
 {
   private Stage stage;
-  public File library;
+  public File libraryDirectory;//location of music files
   public File selectedSong;
-  public List<File> libraryList;
+  public ObservableList<File> currentLibrary;//List of files that can be played currently, most times the main music libraryDirectory
 
   //Component controllers
   @FXML public ContentPaneController contentPaneController;
@@ -28,8 +29,11 @@ public class MainController
   @FXML public void initialize()
   {
     System.out.println("Main Controller Initialized");
+    currentLibrary = FXCollections.observableArrayList();
+
     contentPaneController.Init(this);
     musicBarController.Init(this);
+
   }
 
   public void setStage(Stage stage)
@@ -41,7 +45,11 @@ public class MainController
   {
     DirectoryChooser chooser = new DirectoryChooser();
     chooser.setTitle("Select A Library");
-    this.library = chooser.showDialog(stage);
+    this.libraryDirectory = chooser.showDialog(stage);
+    if(this.libraryDirectory == null) {
+      return;
+    }
+    currentLibrary.addAll(libraryDirectory.listFiles(new FileTypeFilter()));
     contentPaneController.setListView();
   }
 
@@ -61,13 +69,13 @@ public class MainController
     File source;
     File target;
 
-    if (this.library == null) {
+    if (this.libraryDirectory == null) {
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Sync Operation");
       alert.setHeaderText("No source location is selected.");
       return;
     } else {
-      source = this.library;
+      source = this.libraryDirectory;
     }
 
     DirectoryChooser chooser = new DirectoryChooser();

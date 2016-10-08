@@ -1,7 +1,6 @@
 package bin.controllers.componentControllers;
 
 import javafx.scene.control.ListCell;
-
 import java.io.File;
 
 public class MusicCellFormat extends ListCell<File>

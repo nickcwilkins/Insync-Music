@@ -25,7 +25,7 @@ public class ContentPaneController
   {
     this.main = mainController;
     //check for library
-    if(main.library == null)
+    if(main.libraryDirectory == null)
     {
       main.selectLibrary();
     }
@@ -42,6 +42,7 @@ public class ContentPaneController
     TreeItem<String> playListsTreeItem = new TreeItem<>("Playlists");
     rootNode.getChildren().addAll(libraryTreeItem, playListsTreeItem);
 
+    directoryList = new TreeView<>(rootNode);
     directoryList.setRoot(rootNode);
     directoryList.setShowRoot(false);
     directoryList.setOnMouseClicked(event -> System.out.println(directoryList.getSelectionModel().getSelectedItem()));
@@ -56,9 +57,9 @@ public class ContentPaneController
   public void setListView()
   {
     listView.getItems().clear(); //clear the list view each time it is changed
-    if(main.library == null) return;
+    if(main.libraryDirectory == null) return;
     //accepted file types
-    libraryList.addAll(main.library.listFiles((dir, name) -> {
+    libraryList.addAll(main.libraryDirectory.listFiles((dir, name) -> {
       if(name.toLowerCase().endsWith(".mp3")) return true;
       else if(name.toLowerCase().endsWith(".mp4")) return true;
       else if(name.toLowerCase().endsWith(".wav")) return true;
@@ -73,7 +74,7 @@ public class ContentPaneController
       else return false;
     }));
 
-    main.libraryList = this.libraryList;
+    main.currentLibrary = this.libraryList;
     listView.setItems(libraryList);
 
     listView.setCellFactory(param -> new MusicCellFormat());

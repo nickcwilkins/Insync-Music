@@ -63,7 +63,7 @@ public class MusicBarController
     titleLabel.setText(song.getName().substring(0, song.getName().lastIndexOf(".")));
     media = new Media(song.toURI().toString());
     mediaPlayer = new MediaPlayer(media);
-    main.contentPaneController.listView.getSelectionModel().select(main.contentPaneController.libraryList.indexOf(song));
+    main.contentPaneController.listView.getSelectionModel().select(main.currentLibrary.indexOf(song));
     mediaPlayer.play();
     mediaPlayer.currentTimeProperty().addListener(sliderUpdate);
     mediaPlayer.currentTimeProperty().addListener(textUpdate);
@@ -79,13 +79,13 @@ public class MusicBarController
     if(repeat) {
       //doing nothing will allow the song to repeat
     } else if(shuffle) {
-      main.selectedSong = main.libraryList.get((int) Math.floor(Math.random() * (main.libraryList.size() + 1)));
+      main.selectedSong = main.currentLibrary.get((int) Math.floor(Math.random() * (main.currentLibrary.size() + 1)));
     } else {
       //play next song in the list
       try {
-        main.selectedSong = main.libraryList.get(main.libraryList.indexOf(song) + 1);
+        main.selectedSong = main.currentLibrary.get(main.currentLibrary.indexOf(song) + 1);
       } catch(IndexOutOfBoundsException e) {
-        main.selectedSong = main.libraryList.get(0);
+        main.selectedSong = main.currentLibrary.get(0);
       }
     }
 
