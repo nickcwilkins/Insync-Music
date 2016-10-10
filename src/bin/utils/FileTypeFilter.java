@@ -1,4 +1,4 @@
-package bin.controllers.componentControllers;
+package bin.utils;
 
 import java.io.File;
 import java.io.FilenameFilter;

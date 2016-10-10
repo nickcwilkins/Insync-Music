@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<Pane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.componentControllers.MusicBarController">
+<Pane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bin.controllers.MusicBarController">
    <children>
       <Label fx:id="titleLabel" alignment="CENTER" layoutY="4.0" prefHeight="17.0" prefWidth="800.0" styleClass="title" text="Welcome to Insync Music" textAlignment="CENTER" />
       <Label fx:id="currentTimeLabel" layoutX="167.0" layoutY="25.0" text="0:00" />

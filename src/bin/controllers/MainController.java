@@ -1,9 +1,8 @@
 //The main controller allows component controllers to communicate by calling methods defined in the main controller
 package bin.controllers;
 
-import bin.controllers.componentControllers.FileTypeFilter;
-import bin.controllers.componentControllers.MusicBarController;
-import bin.controllers.componentControllers.ContentPaneController;
+import bin.utils.FileTypeFilter;
+import bin.utils.JSONConfig;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,9 +14,9 @@ import java.util.*;
 public class MainController
 {
   private Stage stage;
-  public File libraryDirectory;//location of music files
+  public File libraryDir;//location of music files
   public File selectedSong;
-  public ObservableList<File> currentLibrary;//List of files that can be played currently, most times the main music libraryDirectory
+  public ObservableList<File> currentLibrary;//List of files that can be played currently, most times the main music libraryDir
 
   //Component controllers
   @FXML public ContentPaneController contentPaneController;
@@ -26,14 +25,14 @@ public class MainController
   @FXML private MenuItem selectLibraryBtn;
   @FXML private MenuItem syncBtn;
 
-  @FXML public void initialize()
-  {
-    System.out.println("Main Controller Initialized");
+  @FXML public void initialize() {
     currentLibrary = FXCollections.observableArrayList();
 
+    JSONConfig.Init();
     contentPaneController.Init(this);
     musicBarController.Init(this);
 
+    LoadMainLibrary();//always do this last
   }
 
   public void setStage(Stage stage)
@@ -41,16 +40,29 @@ public class MainController
     this.stage = stage;
   }
 
-  @FXML public void selectLibrary()
+  private void LoadMainLibrary()
+  {
+    String directoryStr = JSONConfig.GetLibraryDirectory();
+    if(!directoryStr.equals("")) {
+      libraryDir = new File(JSONConfig.GetLibraryDirectory());
+      currentLibrary.addAll(libraryDir.listFiles(new FileTypeFilter()));
+      contentPaneController.setListView();
+    } else {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("No Library Found");
+      alert.setHeaderText("Would you like to select a new library?");
+      alert.showAndWait();
+      SelectNewMainLibrary();
+    }
+  }
+
+  @FXML public void SelectNewMainLibrary()
   {
     DirectoryChooser chooser = new DirectoryChooser();
     chooser.setTitle("Select A Library");
-    this.libraryDirectory = chooser.showDialog(stage);
-    if(this.libraryDirectory == null) {
-      return;
-    }
-    currentLibrary.addAll(libraryDirectory.listFiles(new FileTypeFilter()));
-    contentPaneController.setListView();
+    libraryDir = chooser.showDialog(stage);
+    JSONConfig.SetLibraryDirectory(libraryDir.getAbsolutePath());
+    LoadMainLibrary();
   }
 
   /* ============================================================================================
@@ -64,18 +76,36 @@ public class MainController
   /* ============================================================================================
                                          FILE OPERATIONS
    ============================================================================================ */
-  @FXML public void syncOperation() throws IOException
+  @FXML public void AddFilesToLibrary()
+  {
+    File source;
+
+    if(libraryDir == null) {
+      //todo: add an alert here
+      SelectNewMainLibrary();
+    }
+
+
+
+
+
+
+  }
+
+
+
+  @FXML public void SyncIntoLibrary() throws IOException
   {
     File source;
     File target;
 
-    if (this.libraryDirectory == null) {
+    if (libraryDir == null) {
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setTitle("Sync Operation");
       alert.setHeaderText("No source location is selected.");
       return;
     } else {
-      source = this.libraryDirectory;
+      source = libraryDir;
     }
 
     DirectoryChooser chooser = new DirectoryChooser();
@@ -110,26 +140,27 @@ public class MainController
         return;
       }
       System.out.println(childrenMissing);
-      for (int i = 0; i < childrenMissing.size(); i++)
-      {
-        copyDirectory(new File(sourceLocation, childrenMissing.get(i)), new File(targetLocation, childrenMissing.get(i)));
+      for (String missingFile : childrenMissing) {
+
+        InputStream in = new FileInputStream(new File(sourceLocation, missingFile));
+        OutputStream out = new FileOutputStream(new File(targetLocation, missingFile));
+
+        //Copy the bits from instream to outstream
+        byte[] buf = new byte[4096];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+          out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
       }
 
     }
     else
     {
-      //Here sourceLocation and targetLocation are actual files instead of directories
-      InputStream in = new FileInputStream(sourceLocation);
-      OutputStream out = new FileOutputStream(targetLocation);
+      //probably perform these operations on a separate thread?
 
-      //Copy the bits from instream to outstream
-      byte[] buf = new byte[4096];
-      int len;
-      while ((len = in.read(buf)) > 0) {
-        out.write(buf, 0, len);
-      }
-      in.close();
-      out.close();
+
     }
   }
 

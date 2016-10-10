@@ -1,6 +1,5 @@
-package bin.controllers.componentControllers;
+package bin.controllers;
 
-import bin.controllers.MainController;
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
@@ -25,8 +24,8 @@ public class MusicBarController
   @FXML private Label remainingTimeLabel;
   @FXML private Slider scrubber;
   @FXML private ImageView playBtn;
-  private Image playImage = new Image("bin/img/play.png");
-  private Image pauseImage = new Image("bin/img/pause.png");
+  private Image playImage = new Image("bin/ui/img/play.png");
+  private Image pauseImage = new Image("bin/ui/img/pause.png");
 
   ChangeListener<Number> sliderScrubListener;
   ChangeListener<Duration> sliderUpdate;

@@ -10,8 +10,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="selectLibraryBtn" mnemonicParsing="false" onAction="#selectLibrary" text="Select Library..." />
-                  <MenuItem fx:id="syncBtn" mnemonicParsing="false" onAction="#syncOperation" text="Sync with Library..." />
+              <MenuItem fx:id="selectLibraryBtn" mnemonicParsing="false" onAction="#SelectNewMainLibrary" text="Select Library..." />
+                  <MenuItem fx:id="syncBtn" mnemonicParsing="false" onAction="#SyncIntoLibrary" text="Sync with Library..." />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

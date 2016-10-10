@@ -1,4 +1,4 @@
-package bin.controllers.componentControllers;
+package bin.utils;
 
 import javafx.scene.control.ListCell;
 import java.io.File;
