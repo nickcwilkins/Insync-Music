@@ -1,7 +1,7 @@
-package bin.controllers;
+package controllers;
 
-import bin.utils.FileTypeFilter;
-import bin.utils.MusicCellFormat;
+import utils.FileTypeFilter;
+import utils.MusicCellFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,8 +28,6 @@ public class ContentPaneController
 
   private void InitializeTreeView()
   {
-    assert tabListing != null : "TabListing not initialized, check fxml";
-
     TreeItem<String> rootNode = new TreeItem<>("Root");
     TreeItem<String> libraryTreeItem = new TreeItem<>("Music Library");
     TreeItem<String> playListsTreeItem = new TreeItem<>("Playlists");

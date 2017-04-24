@@ -1,8 +1,8 @@
 //The main controller allows component controllers to communicate by calling methods defined in the main controller
-package bin.controllers;
+package controllers;
 
-import bin.utils.FileTypeFilter;
-import bin.utils.JSONConfig;
+import utils.FileTypeFilter;
+import utils.JSONConfig;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +16,7 @@ public class MainController
   private Stage stage;
   public File libraryDir;//location of music files
   public File selectedSong;
+  public int songIndex;
   public ObservableList<File> currentLibrary;//List of files that can be played currently, most times the main music libraryDir
 
   //Component controllers
@@ -70,7 +71,7 @@ public class MainController
    ============================================================================================ */
   public void updateSong()
   {
-    musicBarController.updateMusicBar();
+    musicBarController.UpdateMusicBar();
   }
 
   /* ============================================================================================
@@ -81,7 +82,7 @@ public class MainController
     File source;
 
     if(libraryDir == null) {
-      //todo: add an alert here
+      Alert alert = new Alert(Alert.AlertType.WARNING);
       SelectNewMainLibrary();
     }
 

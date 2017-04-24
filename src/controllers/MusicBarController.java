@@ -1,4 +1,4 @@
-package bin.controllers;
+package controllers;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ChangeListener;
@@ -24,8 +24,8 @@ public class MusicBarController
   @FXML private Label remainingTimeLabel;
   @FXML private Slider scrubber;
   @FXML private ImageView playBtn;
-  private Image playImage = new Image("bin/ui/img/play.png");
-  private Image pauseImage = new Image("bin/ui/img/pause.png");
+  private Image playImage = new Image("ui/img/play.png");
+  private Image pauseImage = new Image("ui/img/pause.png");
 
   ChangeListener<Number> sliderScrubListener;
   ChangeListener<Duration> sliderUpdate;
@@ -55,7 +55,7 @@ public class MusicBarController
     });
   }
 
-  public void updateMusicBar()
+  public void UpdateMusicBar()
   {
     if(mediaPlayer != null) mediaPlayer.stop();
     File song = main.selectedSong;
@@ -66,11 +66,11 @@ public class MusicBarController
     mediaPlayer.play();
     mediaPlayer.currentTimeProperty().addListener(sliderUpdate);
     mediaPlayer.currentTimeProperty().addListener(textUpdate);
-    mediaPlayer.setOnEndOfMedia(() -> playNextSong());
+    mediaPlayer.setOnEndOfMedia(this::PlayNextSong);
     System.out.println("Music Bar update called. New Song is " + song.getName());
   }
 
-  public void playNextSong()
+  public void PlayNextSong()
   {
     File song = main.selectedSong;
 
@@ -88,12 +88,24 @@ public class MusicBarController
       }
     }
 
-    updateMusicBar();
+    UpdateMusicBar();
   }
 
   @FXML public void OnBackClicked()
   {
-    updateMusicBar();
+    if(mediaPlayer.getCurrentTime().toMillis() > 2000) {
+      UpdateMusicBar();//will reset the current song
+    } else {
+      int currentSongIdx = main.currentLibrary.indexOf(main.selectedSong) - 1;
+      int newSongIdx;
+      if(currentSongIdx > 0) {
+        newSongIdx = currentSongIdx - 1;//previous song
+      } else {
+        newSongIdx = main.currentLibrary.size() - 1;//last song in the list
+      }
+      main.selectedSong = main.currentLibrary.get(newSongIdx);
+      UpdateMusicBar();
+    }
   }
 
   @FXML public void OnPlayClicked()
@@ -112,7 +124,7 @@ public class MusicBarController
 
   @FXML public void OnNextClicked()
   {
-    playNextSong();
+    PlayNextSong();
   }
 
   @FXML public void OnRepeatClicked()

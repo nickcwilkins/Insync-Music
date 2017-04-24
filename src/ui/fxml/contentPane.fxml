@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<SplitPane dividerPositions="0.2" prefHeight="405.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContentPaneController">
+   <items>
+      <TreeView fx:id="tabListing" maxWidth="200.0" minWidth="100.0" prefWidth="120.0" />
+      <ListView fx:id="listView" minWidth="635.0" prefHeight="200.0" prefWidth="200.0" />
+   </items>
+</SplitPane>

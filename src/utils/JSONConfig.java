@@ -1,4 +1,4 @@
-package bin.utils;
+package utils;
 
 //for reading and writing data from the config.json file
 
